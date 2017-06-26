@@ -26,16 +26,6 @@ class LeftMenu extends Component {
 					<li>导航导航导航导航导航导航导航导航导航导航导航导航导航导航导航导航导航导航导航导航导航导航导航导航导航导航导航导航</li>
 					<li>导航</li>
 					<li>导航</li>
-					<li>导航</li>
-					<li>导航</li>
-					<li>导航</li>
-					<li>导航</li>
-					<li>导航</li>
-					<li>导航</li>
-					<li>导航</li>
-					<li>导航</li>
-					<li>导航</li>
-					<li>导航</li>
 				</ul>
 			</nav>
 		);

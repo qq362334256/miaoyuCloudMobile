@@ -9,7 +9,7 @@ module.exports = {
     context: path.resolve(dirName, 'src'),
     entry: {
         // 应用路口
-        app: './entry.js'
+        app: './entry.jsx'
     },
     output: {
         // 输出目录
@@ -56,7 +56,9 @@ module.exports = {
     },
     plugins: [
         // 自动创建html文件
-        new htmlWebpackPlugin()
+        new htmlWebpackPlugin({
+            template: 'index.html'
+        })
     ],
     // 部署资源映射
     devtool: 'cheap-module-source-map',
