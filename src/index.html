@@ -1,27 +1,38 @@
 <!DOCTYPE html>
-<html lang="ch-zn">
+<html lang="ch-zn" class="wh-100">
 <head>
     <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Page-Enter" contect="revealTrans(duration=1.0,transtion=12)">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>喵鱼移动云</title>
 </head>
-<body>
+<body class="wh-100">
     <script type="text/javascript">
         // 计算响应式字体大小
         (function() {
-            // 计算响应式比例
-            var number = document.documentElement.clientWidth / 750 * 625;
+            var $HTMLDOM = document.getElementsByTagName('html')[0];
 
-            console.log(number)
+            // 自动计算响应式比例
+            function autoHtmlFontSize() {
+                var winWidth = document.documentElement.clientWidth;
 
-//            if(number < 625) {
-//                document.getElementsByTagName('html')[0].style.fontSize = number +'%';
-//            } else {
-//                document.getElementsByTagName('html')[0].style.fontSize = '625%';
-//            };
-//
-//            number = null;
+                $HTMLDOM.style.fontSize = winWidth > 750 ? '625%' : winWidth / 750 * 625 +'%';
+            };
+            autoHtmlFontSize();
+            
+            // 屏幕改变大小时重算
+            window.onresize = function() {
+                autoHtmlFontSize();
+            };
         })();
     </script>
-    <div id="appEntry"></div>
+    <!-- app应用插入点 -->
+    <div id="appEntry" class="wh-100"></div>
 </body>
 </html>
