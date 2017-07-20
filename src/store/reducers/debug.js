@@ -1,7 +1,6 @@
 import { INSERT_TODO, DELETE_TODO, UPDATE_TODO } from './../activeTypeTable.js';
 
 export const address = (state = [], action) => {
-	console.log(action)
 
 	switch(action.type) {
 		case INSERT_TODO: // 增
