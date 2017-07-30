@@ -2,7 +2,17 @@ const path = require('path');
 const webpack = require('webpack');
 const dirName = path.resolve(__dirname, './../');
 const { devServer: {port}, devConfig: {RESOURCES_URL} } = require('./../config.json');
-const { context, entry, output, crossOriginLoading, resolve, plugins, devtool, module: {rules} } = require('./webpack.basic.js');
+const { 
+    context, 
+    entry, 
+    output, 
+    crossOriginLoading, 
+    resolve, 
+    plugins, 
+    devtool, 
+    module: { rules },
+    imgBundelSize: limit
+} = require('./webpack.basic.js');
 
 
 // 导出开发配置对象
@@ -38,6 +48,13 @@ module.exports = {
                 },
                 'less-loader'
             ]
+        }, { // 图片文件打包
+            test: /\.(png|jpe?g|gif|ico)(\?\S*)?$/,
+            loader: 'file-loader',
+            query: {
+                limit,
+                name: 'images/[name].[ext]'
+            }
         }]
     },
     plugins: [

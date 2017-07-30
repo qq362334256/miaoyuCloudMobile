@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const dirName = path.resolve(__dirname, './../');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 
+
 // 导出核心配置
 module.exports = {
     // loader的加载目录 和 entry入口目录指向路径

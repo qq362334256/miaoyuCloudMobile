@@ -1,5 +1,6 @@
 {
   "maxFileSize": 400000,
+  "imgBundelSize": 10240,
   "devServer": {
     "port": 3001
   },
